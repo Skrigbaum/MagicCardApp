@@ -1,0 +1,12 @@
+c:\users\skrigbaum\documents\visual studio 2015\Projects\MagicApp\MagicApp\bin\Debug\MagicApp.exe.config
+c:\users\skrigbaum\documents\visual studio 2015\Projects\MagicApp\MagicApp\bin\Debug\MagicApp.exe
+c:\users\skrigbaum\documents\visual studio 2015\Projects\MagicApp\MagicApp\bin\Debug\MagicApp.pdb
+c:\users\skrigbaum\documents\visual studio 2015\Projects\MagicApp\MagicApp\bin\Debug\Newtonsoft.Json.dll
+c:\users\skrigbaum\documents\visual studio 2015\Projects\MagicApp\MagicApp\bin\Debug\Newtonsoft.Json.xml
+c:\users\skrigbaum\documents\visual studio 2015\Projects\MagicApp\MagicApp\obj\Debug\MagicApp.exe
+c:\users\skrigbaum\documents\visual studio 2015\Projects\MagicApp\MagicApp\obj\Debug\MagicApp.pdb
+c:\users\skrigbaum\documents\visual studio 2015\Projects\MagicApp\MagicApp\bin\Debug\EntityFramework.dll
+c:\users\skrigbaum\documents\visual studio 2015\Projects\MagicApp\MagicApp\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\skrigbaum\documents\visual studio 2015\Projects\MagicApp\MagicApp\bin\Debug\EntityFramework.xml
+c:\users\skrigbaum\documents\visual studio 2015\Projects\MagicApp\MagicApp\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\skrigbaum\documents\visual studio 2015\Projects\MagicApp\MagicApp\obj\Debug\MagicApp.csprojResolveAssemblyReference.cache
