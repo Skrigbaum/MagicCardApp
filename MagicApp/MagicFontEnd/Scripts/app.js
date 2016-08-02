@@ -8,24 +8,11 @@ function Generate() {
     Antagonist();
 }
 
-function Creatures() {
-    $.ajax({
-        url: 'Home/Creature',
-        async: true,
-        type: 'GET',
-        success: function (ImgUrl) {
-
-            Creature(ImgUrl);
-            return ImgUrl;
-        }
-
-    });
-    function Creature(ImgUrl) {
-        $("#Creature").attr('src', ImgUrl);
-    }
+function Land() {
+    Lands();
 }
 
-function Land() {
+function Lands() {
     $.ajax({
         url: 'Home/Land',
         async: true,
@@ -39,7 +26,29 @@ function Land() {
     });
     function LandUrl(ImgUrl) {
         $("#Land").attr('src', ImgUrl);
-    }
+    };
+}
+
+
+function Creatures() {
+    $.ajax({
+        url: 'Home/Creature',
+        async: true,
+        type: 'GET',
+        success: function(ImgUrl) {
+
+            CreatureUrl(ImgUrl);
+            return ImgUrl;
+        }
+
+    });
+    function CreatureUrl(ImgUrl) {
+        $("#Creature").attr('src', ImgUrl);
+    };
+}
+
+function Helpers() {
+    Helper();
 }
 
 function Helper() {
@@ -57,8 +66,11 @@ function Helper() {
     function HelperUrl(ImgUrl) {
         $("#Helper").attr('src', ImgUrl);
     }
-}
+};
 
+function Antagonists(parameters) {
+    Antagonist();
+}
 function Antagonist() {
     $.ajax({
         url: 'Home/Helper',
@@ -74,6 +86,10 @@ function Antagonist() {
     function AntUrl(ImgUrl) {
         $("#Antagonist").attr('src', ImgUrl);
     }
+};
+
+function Solutions() {
+    Solution();
 }
 
 function Solution() {
