@@ -1,6 +1,7 @@
 ﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    position: relative;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -21,4 +22,33 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+h3 {
+    color: #fff;
+}
+
+p {
+    color: #fff;
+}
+
+
+
+
+body::before {
+    background: url('http://www.artofmtg.com/wp-content/uploads/2016/03/Cryptolith-Rite-Shadows-over-Innistrad-Art.jpg') no-repeat center center fixed;
+    content: '';
+    z-index: -1;
+    width: 110%;
+    height: 100%;
+    position: absolute;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    -webkit-filter: blur(2px);
+    -moz-filter: blur(2px);
+    -o-filter: blur(2px);
+    -ms-filter: blur(2px);
+    filter: blur(2px);
 }
