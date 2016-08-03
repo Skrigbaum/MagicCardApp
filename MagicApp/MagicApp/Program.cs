@@ -15,27 +15,29 @@ namespace MagicApp
     {
         static void Main(string[] args)
         {
-            //int counter = 0;
+            // int counter = 0;
 
-           // IList<Cards> values = LoadJson.Load();
+            //IList<Cards> values = LoadJson.Load();
 
             // used to populate database
-            
-                             
-           /* foreach (var v in values)
-            {
 
-              
-                using ( var ctx = new CardContext())
-                {
-                    ctx.Cards.Add(v);
-                    ctx.SaveChanges();
-                }
-                
-                counter++;
-            }
-            */
 
+            /* foreach (var v in values)
+               {
+
+
+                   using ( var ctx = new CardContext())
+                   {
+                       ctx.Cards.Add(v);
+                       ctx.SaveChanges();
+                   }
+
+                   counter++;
+               }
+               */
+
+            //Test print to check for proper generation
+            /*
             var problem = CardController.RandomCreatureorEnchantment();
             var sorc =  CardController.RandomSorceryorArtifact();
             var land = CardController.RandomLand();
@@ -71,6 +73,30 @@ namespace MagicApp
 
 
             Console.ReadKey();
+            */
+
+           
+            
+            var list = CardListOfNull.LoadList();
+            foreach (var x in list)
+            {
+                string response = GetIds.ParseResponse(x.Name);
+               // Console.WriteLine(x.Name);
+               // Console.WriteLine(response);
+
+              using (var ctx = new CardContext())
+                {
+                    ctx.Database.ExecuteSqlCommand("update [MagicApp.Domain.CardContext].dbo.Cards set MultiverseId = '" + response + "' where name = '" + x.Name+ "';");
+
+                   
+                    Console.WriteLine("update [MagicApp.Domain.CardContext].dbo.Cards set MultiverseId = '" + response + "' where name = '" + x.Name + "'");
+                    ctx.SaveChanges();
+                }
+              
+            }
+            Console.WriteLine("All Done");
+            Console.ReadKey();
+
         }
     }
 }
