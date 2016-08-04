@@ -77,32 +77,34 @@ namespace MagicApp
 
            
             
-            var list = CardListOfNull.LoadList();
+            //var list = CardListOfNull.LoadList();
+
+            var list = CardListOfNull.LoadZeroList();
+
             foreach (var x in list)
             {
                 string response = GetIds.ParseResponse(x.Name);
-               // Console.WriteLine(x.Name);
-               // Console.WriteLine(response);
+              //  Console.WriteLine(x.Name);
+              // Console.WriteLine(response);
 
-              using (var ctx = new CardContext())
-                {
-                    try
-                    {
-                        ctx.Database.ExecuteSqlCommand(
-                            "update [MagicApp.Domain.CardContext].dbo.Cards set MultiverseId = '" + response +
-                            "' where name = '" + x.Name + "';");
+             using (var ctx = new CardContext())
+              {
+
+
+                  ctx.Database.ExecuteSqlCommand(
+                      $"update [MagicApp.Domain.CardContext].dbo.Cards set MultiverseId = '" + response +
+                      "' where name like {0} ;", x.Name);
+              
 
 
                         Console.WriteLine("update [MagicApp.Domain.CardContext].dbo.Cards set MultiverseId = '" +
                                           response + "' where name = '" + x.Name + "'");
                         ctx.SaveChanges();
-                    }
-                    catch
-                    {
-                        ctx.SaveChanges();
-                    }
+                   
+                    
                     
                 }
+               
               
             }
             Console.WriteLine("All Done");

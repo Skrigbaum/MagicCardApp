@@ -14,7 +14,7 @@ namespace MagicApp.Controllers
             using (var ctx = new CardContext())
             {
                 
-                var selection = ctx.Cards.Where(t => t.Type.Contains("Artifact") || t.Type.Contains("Sorcery")).OrderBy(r => Guid.NewGuid()).Take(1);
+                var selection = ctx.Cards.Where(t => t.Type.Contains("Artifact") || t.Type.Contains("Sorcery") || t.Type.Contains("Instant")).OrderBy(r => Guid.NewGuid()).Take(1);
 
                
                 return selection.First();
