@@ -17,26 +17,32 @@ namespace MagicApp
 
         public static List<Cards> Load()
         {
+            //read Json file
             using (
                 StreamReader r = new StreamReader("..\\..\\AllSets.json"))
             {
                 string json = r.ReadToEnd();
 
+                //Stuff Converted Json into variable
                 dynamic array = JsonConvert.DeserializeObject(json);
 
                 List<Cards> allnames = new List<Cards>();
 
+                //Access top level
                 foreach (var item in array)
                 {
+                    //Access Set level
                     foreach (var sets in item)
                     {
-
+                        //Access Card level...Finally
                         foreach (var cards in sets.cards)
                         {
+                            //Check for blank or empty cards
                             if (cards.name != null && !string.IsNullOrWhiteSpace(cards.id.ToString()))
                             {
 
                                 Cards carding = null;
+                                //Assign card to card object of Multiverse Id is valid
                                 try
                                 {
                                     carding = new Cards()
@@ -49,9 +55,10 @@ namespace MagicApp
                                         MultiverseId = cards.multiverseid.ToString()
                                     };
                                 }
-                               catch(RuntimeBinderException)
+                                //Assign to card object if multiverse Id is not valid
+                                catch (RuntimeBinderException)
                                 {
-                                    
+
                                     carding = new Cards()
                                     {
                                         Artist = cards.artist.ToString(),
@@ -59,7 +66,7 @@ namespace MagicApp
                                         Name = cards.name,
                                         ImageName = cards.imageName.ToString(),
                                         Type = cards.type.ToString(),
-                                        
+
                                     };
                                 }
 
@@ -71,7 +78,7 @@ namespace MagicApp
                     }
                 }
 
-
+                //Return List
                 return allnames;
 
 

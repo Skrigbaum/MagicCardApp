@@ -17,22 +17,25 @@ namespace MagicApp
 {
     class GetIds
     {
-        //connection string for api
+        //connection string for api call for Multiverse Id's
         private const string url = "https://api.deckbrew.com/mtg/cards?name=";
         private static string id;
 
-
+        //Return valid Multiverse Id
         public static string ParseResponse(string input)
         {
-
-           var reponse = GetMultiverseId(input);
-
+            //Call APi
+            var reponse = GetMultiverseId(input);
+            //parse response
             dynamic array = JsonConvert.DeserializeObject(reponse);
 
+            //Access Toplevel of response
             foreach (var item in array)
             {
-               foreach (var x in item["editions"])
+                //Access Edition level that stores Id's
+                foreach (var x in item["editions"])
                 {
+                    //If Found valid id assign and move on
                     try
                     {
                         if (x.multiverse_id != 0 || !string.IsNullOrWhiteSpace(x.multiverse_id))
@@ -43,16 +46,16 @@ namespace MagicApp
                         }
                         else
                         {
-                            id ="0";
-                            
+                            id = "0";
+
                         }
                     }
                     catch (RuntimeBinderException)
                     {
                         id = "0";
-                       
+
                     }
-                    
+
 
                 }
 
@@ -60,23 +63,13 @@ namespace MagicApp
                 return id;
 
             }
-
-            
-
-
-           /* using (var ctx = new CardContext())
-            {
-                ctx.Cards;
-                ctx.Cards.Add();
-                ctx.SaveChanges();
-            }
-            */
             return id;
         }
 
-        public static string  GetMultiverseId(string input)
+        //Contact Web Api to get JSON response
+        public static string GetMultiverseId(string input)
         {
-            HttpWebRequest request = (HttpWebRequest) WebRequest.Create(url + input);
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url + input);
             try
             {
                 WebResponse response = request.GetResponse();
@@ -98,8 +91,8 @@ namespace MagicApp
                 }
                 throw;
             }
-            
+
         }
-        
+
     }
 }

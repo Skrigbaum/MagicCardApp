@@ -13,14 +13,14 @@ namespace MagicApp.Controllers
         {
             using (var ctx = new CardContext())
             {
-                
+
                 var selection = ctx.Cards.Where(t => t.Type.Contains("Artifact") || t.Type.Contains("Sorcery") || t.Type.Contains("Instant")).OrderBy(r => Guid.NewGuid()).Take(1);
 
-               
+
                 return selection.First();
 
             }
-            
+
         }
 
 
@@ -29,7 +29,7 @@ namespace MagicApp.Controllers
         {
             using (var ctx = new CardContext())
             {
-                var sorcery = ctx.Cards.Where(s => s.Type.Contains("Creature")).OrderBy(r => Guid.NewGuid()).Take(1);
+                var sorcery = ctx.Cards.Where(s => s.Type.Contains("Creature") || s.Type.Contains("Enchantment")).OrderBy(r => Guid.NewGuid()).Take(1);
 
 
                 return sorcery.First();

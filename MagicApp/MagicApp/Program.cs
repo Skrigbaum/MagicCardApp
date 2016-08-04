@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using MagicApp.Controllers;
 using MagicApp.Domain;
 
 namespace MagicApp
@@ -15,13 +8,14 @@ namespace MagicApp
     {
         static void Main(string[] args)
         {
+
+            #region Load Json into Database
             // int counter = 0;
 
-            //IList<Cards> values = LoadJson.Load();
+            //Assigns results of Json Parsing to list of values
+            // IList<Cards> values = LoadJson.Load();
 
-            // used to populate database
-
-
+            // Populate database with List Values
             /* foreach (var v in values)
                {
 
@@ -31,12 +25,14 @@ namespace MagicApp
                        ctx.Cards.Add(v);
                        ctx.SaveChanges();
                    }
-
+                   //counts the total cards added
                    counter++;
                }
                */
+            #endregion
 
-            //Test print to check for proper generation
+
+            #region  Test print to check for proper generation
             /*
             var problem = CardController.RandomCreatureorEnchantment();
             var sorc =  CardController.RandomSorceryorArtifact();
@@ -74,39 +70,47 @@ namespace MagicApp
 
             Console.ReadKey();
             */
+            #endregion
 
-           
-            
+            #region import Multiverse id's
+            //Creates list of all cards with Mutliverse id's of null
             //var list = CardListOfNull.LoadList();
 
+            //Creates list of all Cards with Multiverse Id's of 0
             var list = CardListOfNull.LoadZeroList();
 
+
+            //loops through all cards in list and fetches Id
             foreach (var x in list)
             {
                 string response = GetIds.ParseResponse(x.Name);
-              //  Console.WriteLine(x.Name);
-              // Console.WriteLine(response);
-
-             using (var ctx = new CardContext())
-              {
+                //  Console.WriteLine(x.Name);
+                // Console.WriteLine(response);
 
 
-                  ctx.Database.ExecuteSqlCommand(
-                      $"update [MagicApp.Domain.CardContext].dbo.Cards set MultiverseId = '" + response +
-                      "' where name like {0} ;", x.Name);
-              
+                //replaces null or 0 with fetched ID
+                using (var ctx = new CardContext())
+                {
 
 
-                        Console.WriteLine("update [MagicApp.Domain.CardContext].dbo.Cards set MultiverseId = '" +
-                                          response + "' where name = '" + x.Name + "'");
-                        ctx.SaveChanges();
-                   
-                    
-                    
+                    ctx.Database.ExecuteSqlCommand(
+                        $"update [MagicApp.Domain.CardContext].dbo.Cards set MultiverseId = '" + response +
+                        "' where name like {0} ;", x.Name);
+
+
+
+                    Console.WriteLine("update [MagicApp.Domain.CardContext].dbo.Cards set MultiverseId = '" +
+                                      response + "' where name = '" + x.Name + "'");
+                    ctx.SaveChanges();
+
+
+
                 }
-               
-              
+
+
             }
+            #endregion
+
             Console.WriteLine("All Done");
             Console.ReadKey();
 
