@@ -43,14 +43,14 @@ namespace MagicApp
                         }
                         else
                         {
-                            id = "0";
-                            return id;
+                            id ="0";
+                            
                         }
                     }
                     catch (RuntimeBinderException)
                     {
                         id = "0";
-                        return id;
+                       
                     }
                     
 

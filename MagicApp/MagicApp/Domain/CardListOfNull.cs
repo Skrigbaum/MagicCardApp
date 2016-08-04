@@ -27,5 +27,21 @@ namespace MagicApp.Domain
             
         }
 
+        public static List<Cards> LoadZeroList()
+        {
+            using (var ctx = new CardContext())
+            {
+                var templistofNames = ctx.Cards.SqlQuery("select * from Cards where MultiverseId = '0' order by name;");
+
+                foreach (var x in templistofNames)
+                {
+                    listofnames.Add(x);
+                }
+            }
+
+            return listofnames;
+
+        }
+
     }
 }
