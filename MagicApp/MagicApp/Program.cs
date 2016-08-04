@@ -1,6 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using MagicApp.Domain;
+﻿using MagicApp.Domain;
+using System;
 
 namespace MagicApp
 {

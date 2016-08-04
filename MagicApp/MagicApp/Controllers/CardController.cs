@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using MagicApp.Domain;
+using System;
 using System.Linq;
-using MagicApp.Domain;
 
 namespace MagicApp.Controllers
 {

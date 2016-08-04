@@ -1,17 +1,9 @@
-﻿using MagicApp.Domain;
-using System;
-using System.Collections.Generic;
-using System.Data.Entity.ModelConfiguration.Configuration;
-using System.Diagnostics;
-using System.IO;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Runtime.InteropServices.ComTypes;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.CSharp.RuntimeBinder;
+﻿using Microsoft.CSharp.RuntimeBinder;
 using Newtonsoft.Json;
+using System;
+using System.IO;
+using System.Net;
+using System.Text;
 
 namespace MagicApp
 {
