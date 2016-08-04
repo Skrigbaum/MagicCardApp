@@ -86,11 +86,22 @@ namespace MagicApp
 
               using (var ctx = new CardContext())
                 {
-                    ctx.Database.ExecuteSqlCommand("update [MagicApp.Domain.CardContext].dbo.Cards set MultiverseId = '" + response + "' where name = '" + x.Name+ "';");
+                    try
+                    {
+                        ctx.Database.ExecuteSqlCommand(
+                            "update [MagicApp.Domain.CardContext].dbo.Cards set MultiverseId = '" + response +
+                            "' where name = '" + x.Name + "';");
 
-                   
-                    Console.WriteLine("update [MagicApp.Domain.CardContext].dbo.Cards set MultiverseId = '" + response + "' where name = '" + x.Name + "'");
-                    ctx.SaveChanges();
+
+                        Console.WriteLine("update [MagicApp.Domain.CardContext].dbo.Cards set MultiverseId = '" +
+                                          response + "' where name = '" + x.Name + "'");
+                        ctx.SaveChanges();
+                    }
+                    catch
+                    {
+                        ctx.SaveChanges();
+                    }
+                    
                 }
               
             }
