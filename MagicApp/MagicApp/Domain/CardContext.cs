@@ -11,7 +11,8 @@ namespace MagicApp.Domain
 
 
        public DbSet<Cards> Cards { get; set; }
-    
+
+        
 
     }
 }

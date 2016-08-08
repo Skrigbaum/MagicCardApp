@@ -1,4 +1,6 @@
-﻿using System.Web.Mvc;
+﻿using System.Drawing;
+using System.Web.Mvc;
+using WebGrease.Css.ImageAssemblyAnalysis;
 
 namespace MagicFontEnd.Controllers
 {
@@ -37,8 +39,9 @@ namespace MagicFontEnd.Controllers
         public string Land()
         {
             var Land = MagicApp.Controllers.CardController.RandomLand();
-            var ImgUrl = "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=" + Land.MultiverseId + "&type=card";
+            //var ImgUrl = "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=" + Land.MultiverseId + "&type=card";
 
+            var ImgUrl = "/Images/Modern Masters/Absorb Vis.full.jpg";
             return ImgUrl;
 
 
