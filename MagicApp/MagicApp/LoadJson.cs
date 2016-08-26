@@ -39,29 +39,66 @@ namespace MagicApp
                                 //Assign card to card object of Multiverse Id is valid
                                 try
                                 {
-                                    carding = new Cards()
+                                    if (cards.flavor != null && !string.IsNullOrWhiteSpace(cards.flavor.ToString()))
                                     {
-                                        Artist = cards.artist.ToString(),
-                                        Id = cards.id.ToString(),
-                                        Name = cards.name,
-                                        ImageName = cards.imageName.ToString(),
-                                        Type = cards.type.ToString(),
-                                        MultiverseId = cards.multiverseid.ToString()
-                                    };
+                                        carding = new Cards()
+                                        {
+                                            Artist = cards.artist.ToString(),
+                                            Id = cards.id.ToString(),
+                                            Name = cards.name,
+                                            ImageName = cards.imageName.ToString(),
+                                            Type = cards.type.ToString(),
+                                            MultiverseId = cards.multiverseid.ToString(),
+                                            Rarity = cards.rarity.ToString(),
+                                            Flavor = cards.flavor.ToString()
+                                        };
+                                    }
+                                    else
+                                    {
+                                        carding = new Cards()
+                                        {
+                                            Artist = cards.artist.ToString(),
+                                            Id = cards.id.ToString(),
+                                            Name = cards.name,
+                                            ImageName = cards.imageName.ToString(),
+                                            Type = cards.type.ToString(),
+                                            MultiverseId = cards.multiverseid.ToString(),
+                                            Rarity = cards.rarity.ToString(),
+                                            
+                                        };
+                                    }
                                 }
                                 //Assign to card object if multiverse Id is not valid
                                 catch (RuntimeBinderException)
                                 {
-
-                                    carding = new Cards()
+                                    if (cards.flavor != null && !string.IsNullOrWhiteSpace(cards.flavor.ToString()))
                                     {
-                                        Artist = cards.artist.ToString(),
-                                        Id = cards.id.ToString(),
-                                        Name = cards.name,
-                                        ImageName = cards.imageName.ToString(),
-                                        Type = cards.type.ToString(),
+                                        carding = new Cards()
+                                        {
+                                            Artist = cards.artist.ToString(),
+                                            Id = cards.id.ToString(),
+                                            Name = cards.name,
+                                            ImageName = cards.imageName.ToString(),
+                                            Type = cards.type.ToString(),
+                                            Rarity = cards.rarity.ToString(),
+                                            Flavor = cards.flavor.ToString()
+                                        };
+                                    }
+                                    else
+                                    {
+                                        carding = new Cards()
+                                        {
+                                            Artist = cards.artist.ToString(),
+                                            Id = cards.id.ToString(),
+                                            Name = cards.name,
+                                            ImageName = cards.imageName.ToString(),
+                                            Type = cards.type.ToString(),
+                                            Rarity = cards.rarity.ToString(),
+                                            
+                                        };
+                                    }
 
-                                    };
+
                                 }
 
                                 allnames.Add(carding);
