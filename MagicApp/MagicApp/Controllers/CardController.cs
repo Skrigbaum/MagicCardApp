@@ -24,11 +24,12 @@ namespace MagicApp.Controllers
 
 
         //Call to retrieve the Problem
-        public static Cards RandomCreatureorEnchantment()
+        public static Cards Problem()
         {
             using (var ctx = new CardContext())
             {
-                var sorcery = ctx.Cards.Where(s => s.Type.Contains("Creature") || s.Type.Contains("Enchantment")).OrderBy(r => Guid.NewGuid()).Take(1);
+
+                var sorcery = ctx.Cards.Where(s => s.Type.Contains("Creature") || s.Type.Contains("Enchantment") || s.Type.Contains("Conspiracy") || s.Type.Contains("Scheme") || s.Type.Contains("Phenomenon") || s.Type.Contains("PlanesWalker") || s.Type.Contains("Vanguard")).OrderBy(r => Guid.NewGuid()).Take(1);
 
 
                 return sorcery.First();
@@ -43,7 +44,7 @@ namespace MagicApp.Controllers
         {
             using (var ctx = new CardContext())
             {
-                var landlist = ctx.Cards.Where(l => l.Type.Contains("land")).OrderBy(r => Guid.NewGuid()).Take(1);
+                var landlist = ctx.Cards.Where(l => l.Type.Contains("land") || l.Type.Contains("Plane -")).OrderBy(r => Guid.NewGuid()).Take(1);
 
 
                 return landlist.First();
@@ -56,7 +57,7 @@ namespace MagicApp.Controllers
         {
             using (var ctx = new CardContext())
             {
-                var creatureList = ctx.Cards.Where(l => l.Type.Contains("Creature")).OrderBy(r => Guid.NewGuid()).Take(1);
+                var creatureList = ctx.Cards.Where(l => l.Type.Contains("Creature") || l.Type.Contains("PlanesWalker")).OrderBy(r => Guid.NewGuid()).Take(1);
 
 
                 return creatureList.First();

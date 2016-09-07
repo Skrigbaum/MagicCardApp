@@ -30,7 +30,7 @@ namespace MagicFontEnd.Controllers
        
        public string Creature()
         {
-           var creature = MagicApp.Controllers.CardController.RandomCreatureorEnchantment();
+           var creature = MagicApp.Controllers.CardController.Problem();
            var ImgUrl = "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=" + creature.MultiverseId + "&type=card";
             if (System.IO.File.Exists(@"C:\Users\skrigbaum\MagicCardApp\MagicApp\MagicFontEnd\Images\" + creature.Name + ".full.jpg"))
             {
