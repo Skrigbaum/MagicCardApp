@@ -18,8 +18,6 @@
         public string Type { get; set; }
         public string Rarity { get; set; }
         public string Flavor { get; set; }
-        public string Set { get; set; }
-        public string mciNumber { get; set; }
         
 
     }

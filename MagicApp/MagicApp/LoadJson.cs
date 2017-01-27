@@ -41,17 +41,6 @@ namespace MagicApp
                                 {
                                     if (cards.flavor != null && !string.IsNullOrWhiteSpace(cards.flavor.ToString()))
                                     {
-                                        if (cards.mciNumber == null || string.IsNullOrWhiteSpace(cards.mciNumber.ToString()))
-                                        {
-                                            try
-                                            {
-                                                cards.mciNumber = cards.number;
-                                            }
-                                            catch
-                                            {
-                                                cards.mciNumber = 0;
-                                            }
-                                        }
                                         carding = new Cards()
                                         {
                                             Artist = cards.artist.ToString(),
@@ -61,24 +50,11 @@ namespace MagicApp
                                             Type = cards.type.ToString(),
                                             MultiverseId = cards.multiverseid.ToString(),
                                             Rarity = cards.rarity.ToString(),
-                                            Flavor = cards.flavor.ToString(),
-                                            Set = sets.code.ToString(),
-                                            mciNumber = cards.mciNumber.ToString()
+                                            Flavor = cards.flavor.ToString()
                                         };
                                     }
                                     else
                                     {
-                                        if (cards.mciNumber == null || string.IsNullOrWhiteSpace(cards.mciNumber.ToString()))
-                                        {
-                                            try
-                                            {
-                                                cards.mciNumber = cards.number;
-                                            }
-                                            catch
-                                            {
-                                                cards.mciNumber = 0;
-                                            }
-                                        }
                                         carding = new Cards()
                                         {
                                             Artist = cards.artist.ToString(),
@@ -88,9 +64,7 @@ namespace MagicApp
                                             Type = cards.type.ToString(),
                                             MultiverseId = cards.multiverseid.ToString(),
                                             Rarity = cards.rarity.ToString(),
-                                            Set = sets.code.ToString(),
-                                            mciNumber = cards.mciNumber.ToString()
-
+                                            
                                         };
                                     }
                                 }
@@ -99,19 +73,7 @@ namespace MagicApp
                                 {
                                     if (cards.flavor != null && !string.IsNullOrWhiteSpace(cards.flavor.ToString()))
                                     {
-                                        if (cards.mciNumber == null || string.IsNullOrWhiteSpace(cards.mciNumber.ToString()))
-                                        {
-                                            try
-                                            {
-                                                cards.mciNumber = cards.number;
-                                            }
-                                            catch
-                                            {
-                                                cards.mciNumber = 0;
-                                            }
-                                        }
                                         carding = new Cards()
-
                                         {
                                             Artist = cards.artist.ToString(),
                                             Id = cards.id.ToString(),
@@ -119,24 +81,11 @@ namespace MagicApp
                                             ImageName = cards.imageName.ToString(),
                                             Type = cards.type.ToString(),
                                             Rarity = cards.rarity.ToString(),
-                                            Flavor = cards.flavor.ToString(),
-                                            Set = sets.code.ToString(),
-                                            mciNumber = cards.mciNumber.ToString()
+                                            Flavor = cards.flavor.ToString()
                                         };
                                     }
-                                     else
+                                    else
                                     {
-                                        if (cards.mciNumber == null || string.IsNullOrWhiteSpace(cards.mciNumber.ToString()))
-                                        {
-                                            try
-                                            {
-                                                cards.mciNumber = cards.number;
-                                            }
-                                            catch
-                                            {
-                                                cards.mciNumber = 0;
-                                            }
-                                        }
                                         carding = new Cards()
                                         {
                                             Artist = cards.artist.ToString(),
@@ -145,9 +94,7 @@ namespace MagicApp
                                             ImageName = cards.imageName.ToString(),
                                             Type = cards.type.ToString(),
                                             Rarity = cards.rarity.ToString(),
-                                            Set = sets.code.ToString(),
-                                            mciNumber = cards.mciNumber.ToString()
-
+                                            
                                         };
                                     }
 

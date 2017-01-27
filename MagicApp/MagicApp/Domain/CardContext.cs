@@ -4,7 +4,7 @@ namespace MagicApp.Domain
 {
     internal class CardContext : DbContext
     {
-       public CardContext() : base("MySqlDB")
+       public CardContext() : base()
        {
            
        }
