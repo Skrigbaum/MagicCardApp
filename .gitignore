@@ -4,3 +4,7 @@
 MagicApp/\.vs/MagicApp/v14/
 
 MagicApp/MagicFontEnd/obj/Debug/
+
+MagicApp/MagicFontEnd/Web.config
+
+MagicApp/MagicApp/App.config
