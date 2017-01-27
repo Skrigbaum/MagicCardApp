@@ -1,6 +1,8 @@
-﻿using MagicApp.Domain;
+﻿using MagicApp.Controllers;
+using MagicApp.Domain;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.SqlServer;
 using System.Linq;
 
 namespace MagicApp
@@ -11,25 +13,26 @@ namespace MagicApp
         {
 
             #region Load Json into Database
-          // int counter = 0;
+           /*
+            int counter = 0;
 
             //Assigns results of Json Parsing to list of values
-         //  IList<Cards> values = LoadJson.Load();
+             IList<Cards> values = LoadJson.Load();
 
             // Populate database with List Values
-          /* foreach (var v in values)
-               {
+           foreach (var v in values)
+                 {
 
 
-                   using ( var ctx = new CardContext())
-                   {
-                       ctx.Cards.Add(v);
-                       ctx.SaveChanges();
-                   }
-                   //counts the total cards added
-                   counter++;
-               }
-               */
+                     using ( var ctx = new CardContext())
+                     {
+                         ctx.Cards.Add(v);
+                         ctx.SaveChanges();
+                     }
+                     //counts the total cards added
+                     counter++;
+                 }
+             */
             #endregion
 
 
@@ -74,11 +77,12 @@ namespace MagicApp
             #endregion
 
             #region import Multiverse id's
+            
             //Creates list of all cards with Mutliverse id's of null
-            //var list = CardListOfNull.LoadList();
+           // var list = CardListOfNull.LoadList();
 
             //Creates list of all Cards with Multiverse Id's of 0
-             var list = CardListOfNull.LoadZeroList();
+              var list = CardListOfNull.LoadZeroList();
 
 
             //loops through all cards in list and fetches Id
@@ -94,9 +98,10 @@ namespace MagicApp
                 {
 
 
+                    
                     ctx.Database.ExecuteSqlCommand(
-                        $"update [MagicApp.Domain.CardContext].dbo.Cards set MultiverseId = '" + response +
-                        "' where name like {0} ;", x.Name);
+                        $"UPDATE magic.cards SET MultiVerseId = '" + response +
+                        "' where name = {0} ;", x.Name);
 
 
 
@@ -110,8 +115,10 @@ namespace MagicApp
 
 
             }
+            
             #endregion
-
+          
+            
             Console.WriteLine("All Done");
             Console.ReadKey();
 

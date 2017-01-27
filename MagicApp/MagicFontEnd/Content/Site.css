@@ -32,7 +32,15 @@ p {
     color: #fff;
 }
 
-
+.thumbnail:hover {
+    position:absolute;
+    top:-25px;
+    left:-80px;
+    width:334px;
+    height:auto;
+    display:block;
+    z-index:999;
+}
 
 
 body::before {
