@@ -3,11 +3,21 @@ using System.Web.Mvc;
 using WebGrease.Css.ImageAssemblyAnalysis;
 using System.IO;
 using System;
+using System.Net;
+using System.Text.RegularExpressions;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace MagicFontEnd.Controllers
 {
     public class HomeController : Controller
     {
+        private static string theProblem = "";
+        private static string theSetting = "";
+        private static string theSolution = "";
+        private static string theHelper = "";
+        private static string theAntagonist = "";
+
         public ActionResult Index()
         {
             return View();
@@ -27,25 +37,17 @@ namespace MagicFontEnd.Controllers
             return View();
         }
 
-       
-       public string Creature()
+
+        public string Creature()
         {
-           var creature = MagicApp.Controllers.CardController.Problem();
-           var ImgUrl = "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=" + creature.MultiverseId + "&type=card";
-            if (System.IO.File.Exists(@"C:\Users\skrigbaum\MagicCardApp\MagicApp\MagicFontEnd\Images\" + creature.Name + ".full.jpg"))
-            {
-                ImgUrl = @"\Images\" + creature.Name + ".full.jpg";
-                return ImgUrl;
-            }
-            else
-            {
-                return ImgUrl;
-            }
+            var creature = MagicApp.Controllers.CardController.Problem();
+            var ImgUrl = "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=" + creature.MultiverseId + "&type=card";
+            var magicurl = "http://magiccards.info/scans/en/" + creature.Set + "/" + creature.mciNumber + ".jpg";
+            theProblem = creature.MultiverseId;
+            return ImgUrl;
+          }
 
-            
-
-
-        }
+           
 
         public string Land()
         {
@@ -55,10 +57,12 @@ namespace MagicFontEnd.Controllers
             if (System.IO.File.Exists(@"C:\Users\skrigbaum\MagicCardApp\MagicApp\MagicFontEnd\Images\" + Land.Name + ".full.jpg"))
             {
                 ImgUrl =  @"\Images\" + Land.Name +".full.jpg";
+                theSetting = Land.MultiverseId;
                 return ImgUrl;
             }
             else
             {
+                theSetting = Land.MultiverseId;
                 return ImgUrl;
             }
             
@@ -73,17 +77,37 @@ namespace MagicFontEnd.Controllers
             if (System.IO.File.Exists(@"C:\Users\skrigbaum\MagicCardApp\MagicApp\MagicFontEnd\Images\" + helper.Name + ".full.jpg"))
             {
                 ImgUrl = @"\Images\" + helper.Name + ".full.jpg";
+                theHelper = helper.MultiverseId;
                 return ImgUrl;
             }
             else
             {
+                theHelper = helper.MultiverseId;
+                return ImgUrl;
+            }
+        }
+        
+        public string Antagonist()
+        {
+            var antagonist = MagicApp.Controllers.CardController.Problem();
+            var ImgUrl = "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=" + antagonist.MultiverseId + "&type=card";
+            if (System.IO.File.Exists(@"C:\Users\skrigbaum\MagicCardApp\MagicApp\MagicFontEnd\Images\" + antagonist.Name + ".full.jpg"))
+            {
+                ImgUrl = @"\Images\" + antagonist.Name + ".full.jpg";
+                theAntagonist = antagonist.MultiverseId;
+                return ImgUrl;
+            }
+            else
+            {
+                theAntagonist = antagonist.MultiverseId;
                 return ImgUrl;
             }
 
-            
+
 
 
         }
+
 
         public string Solution()
         {
@@ -92,16 +116,24 @@ namespace MagicFontEnd.Controllers
             if (System.IO.File.Exists(@"C:\Users\skrigbaum\MagicCardApp\MagicApp\MagicFontEnd\Images\" + solution.Name + ".full.jpg"))
             {
                 ImgUrl = @"\Images\" + solution.Name + ".full.jpg";
+                theSolution = solution.MultiverseId;
                 return ImgUrl;
             }
             else
             {
+                theSolution = solution.MultiverseId;
                 return ImgUrl;
             }
 
            
 
 
+        }
+
+        public string Save()
+        {
+            string idConcat = string.Format("{0}|{1}|{2}|{3}|{4}", theProblem, theSetting, theSolution, theHelper, theAntagonist);
+            return idConcat;
         }
     }
 }

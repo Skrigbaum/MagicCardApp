@@ -29,7 +29,7 @@
 
 </head>
 
-<body  onload="Generate()">
+<body onload="Generate()"  >
     
 <!-- Navigation -->
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -73,6 +73,10 @@
         </p>
         <p class="">
             <input type="button" onclick="Generate();" class="btn btn-primary btn-lg" value="Generate">
+            <input type="button" onclick="SaveCards();" class="btn btn-primary btn-lg" value="Save">
+        </p>
+        <p class="">
+          <input class="form-control" id="Load" value="Your code will be shown here." type="text" >
         </p>
     </header>
     <hr>
@@ -81,9 +85,9 @@
     <!-- /.row -->
     <!-- Page Features -->
     <div class="row text-center">
-        <div class="col-md-3 col-sm-6 hero-feature" >
+        <div class="col-md-2 col-sm-6 hero-feature" >
             <div class="thumbnail" style="background: transparent; border:transparent">
-                <img id="Creature" src="http://placehold.it/800x500" alt=""  onclick="Creatures()">
+                <img id="Creature" src="http://placehold.it/800x500" alt="" onclick="Creatures()" width="311px">
                 <div class="caption">
                     <h3 style="color:#fff" >The Problem</h3>
                     <p style="color:#fff">
@@ -96,9 +100,9 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-3 col-sm-6 hero-feature">
+        <div class="col-md-2 col-sm-6 hero-feature">
             <div class="thumbnail" style="background: transparent; border:transparent">
-                <img id="Land" src="http://placehold.it/800x500" alt=""  onclick="Lands()">
+                <img id="Land" src="http://placehold.it/800x500" alt=""  onclick="Lands()" width="311px">
                 <div class="caption">
                     <h3 style="color:#fff">The Setting</h3>
                     <p style="color:#fff">Where it all happens.</p>
@@ -106,9 +110,9 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-3 col-sm-6 hero-feature">
+        <div class="col-md-2 col-sm-6 hero-feature">
             <div class="thumbnail" style="background: transparent; border:transparent">
-                <img id="Solution" src="http://placehold.it/800x500" alt=""  onclick="Solutions();">
+                <img id="Solution" src="http://placehold.it/800x500" alt=""  onclick="Solutions();" width="311px">
                 <div class="caption">
                     <h3 style="color:#fff">The Solution</h3>
                     <p style="color:#fff">
@@ -121,9 +125,9 @@
             </div>
         </div>
 
-        <div class="col-md-3 col-sm-6 hero-feature">
+        <div class="col-md-2 hero-feature">
             <div class="thumbnail" style="background: transparent; border:transparent">
-                <img id="Helper" src="http://placehold.it/800x500" alt="Helper Card" onclick="Helpers();">
+                <img id="Helper" src="http://placehold.it/800x500" alt="Helper Card" onclick="Helpers();" width="311px">
                 <div class="caption">
                     <h3 style="color:#fff">The Helper</h3>
                     <p style="color:#fff">Represents someone who wants the problem to be resolved / removed from the scene.</p>
@@ -133,9 +137,9 @@
         </div>
 
 
-        <div class="col-md-3 col-sm-6 hero-feature">
+        <div class="col-md-2 col-sm-6 hero-feature">
             <div class="thumbnail" style="background: transparent; border:transparent">
-                <img id="Antagonist" src="http://placehold.it/800x500" alt=""  onclick="Antagonists();">
+                <img id="Antagonist" src="http://placehold.it/800x500" alt=""  onclick="Antagonists();" width="311px">
                 <div class="caption">
                     <h3 style="color:#fff">The Antagonist</h3>
                     <p style="color:#fff">Represents someone who wants the problem to continue in the scene or make use of the problem.</p>

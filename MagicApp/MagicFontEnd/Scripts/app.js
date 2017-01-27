@@ -5,7 +5,25 @@ function Generate() {
     Land();
     Helper();
     Solution();
-    Antagonist();
+    Antagonists();
+}
+
+
+function SaveCards() {
+    $.ajax({
+        url: 'Home/Save',
+        async: true,
+        type: 'GET',
+        success: function(Code) {
+
+          return SaveCodes(Code)
+           
+        }
+    });
+    function SaveCodes(Code) {
+        $("#Load").attr('value', Code);
+        return null
+    };
 }
 
 function Land() {
@@ -68,12 +86,12 @@ function Helper() {
     }
 };
 
-function Antagonists(parameters) {
+function Antagonists() {
     Antagonist();
 }
 function Antagonist() {
     $.ajax({
-        url: 'Home/Helper',
+        url: 'Home/Antagonist',
         async: true,
         type: 'GET',
         success: function (ImgUrl) {

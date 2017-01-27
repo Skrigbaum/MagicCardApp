@@ -10,3 +10,20 @@ c:\users\skrigbaum\documents\visual studio 2015\Projects\MagicApp\MagicApp\bin\D
 c:\users\skrigbaum\documents\visual studio 2015\Projects\MagicApp\MagicApp\bin\Debug\EntityFramework.xml
 c:\users\skrigbaum\documents\visual studio 2015\Projects\MagicApp\MagicApp\bin\Debug\EntityFramework.SqlServer.xml
 c:\users\skrigbaum\documents\visual studio 2015\Projects\MagicApp\MagicApp\obj\Debug\MagicApp.csprojResolveAssemblyReference.cache
+C:\Users\Spencer\Downloads\MagicCardApp-spencer\MagicCardApp-spencer\MagicApp\MagicApp\bin\Debug\MagicApp.exe.config
+C:\Users\Spencer\Downloads\MagicCardApp-spencer\MagicCardApp-spencer\MagicApp\MagicApp\bin\Debug\MagicApp.exe
+C:\Users\Spencer\Downloads\MagicCardApp-spencer\MagicCardApp-spencer\MagicApp\MagicApp\bin\Debug\MagicApp.pdb
+C:\Users\Spencer\Downloads\MagicCardApp-spencer\MagicCardApp-spencer\MagicApp\MagicApp\bin\Debug\EntityFramework.dll
+C:\Users\Spencer\Downloads\MagicCardApp-spencer\MagicCardApp-spencer\MagicApp\MagicApp\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Spencer\Downloads\MagicCardApp-spencer\MagicCardApp-spencer\MagicApp\MagicApp\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Spencer\Downloads\MagicCardApp-spencer\MagicCardApp-spencer\MagicApp\MagicApp\bin\Debug\EntityFramework.xml
+C:\Users\Spencer\Downloads\MagicCardApp-spencer\MagicCardApp-spencer\MagicApp\MagicApp\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Spencer\Downloads\MagicCardApp-spencer\MagicCardApp-spencer\MagicApp\MagicApp\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Spencer\Downloads\MagicCardApp-spencer\MagicCardApp-spencer\MagicApp\MagicApp\obj\Debug\MagicApp.csprojResolveAssemblyReference.cache
+C:\Users\Spencer\Downloads\MagicCardApp-spencer\MagicCardApp-spencer\MagicApp\MagicApp\obj\Debug\MagicApp.exe
+C:\Users\Spencer\Downloads\MagicCardApp-spencer\MagicCardApp-spencer\MagicApp\MagicApp\obj\Debug\MagicApp.pdb
+C:\Users\Spencer\Downloads\MagicCardApp-spencer\MagicCardApp-spencer\MagicApp\MagicApp\bin\Debug\MtgApiManager.Lib.dll
+C:\Users\Spencer\Downloads\MagicCardApp-spencer\MagicCardApp-spencer\MagicApp\MagicApp\bin\Debug\MySql.Data.Entity.EF6.dll
+C:\Users\Spencer\Downloads\MagicCardApp-spencer\MagicCardApp-spencer\MagicApp\MagicApp\bin\Debug\MySql.Data.dll
+C:\Users\Spencer\Downloads\MagicCardApp-spencer\MagicCardApp-spencer\MagicApp\MagicApp\bin\Debug\MySql.Data.Entity.EF6.xml
+C:\Users\Spencer\Downloads\MagicCardApp-spencer\MagicCardApp-spencer\MagicApp\MagicApp\bin\Debug\MySql.Data.xml

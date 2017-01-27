@@ -1,4 +1,5 @@
 ﻿using MagicApp.Domain;
+using MtgApiManager.Lib.Model;
 using System;
 using System.Linq;
 
@@ -13,7 +14,8 @@ namespace MagicApp.Controllers
             using (var ctx = new CardContext())
             {
 
-                var selection = ctx.Cards.Where(t => t.Type.Contains("Artifact") || t.Type.Contains("Sorcery") || t.Type.Contains("Instant")).OrderBy(r => Guid.NewGuid()).Take(1);
+               
+                var selection = ctx.Cards.SqlQuery("Select * from magic.cards where type like '" + "%Artifact%" + "' or type like '" + "%Sorcery%" + "' or type like '" + "%Instant%" + "' order by RAND() limit 1;").ToList();
 
 
                 return selection.First();
@@ -28,8 +30,8 @@ namespace MagicApp.Controllers
         {
             using (var ctx = new CardContext())
             {
-
-                var sorcery = ctx.Cards.Where(s => s.Type.Contains("Creature") || s.Type.Contains("Enchantment") || s.Type.Contains("Conspiracy") || s.Type.Contains("Scheme") || s.Type.Contains("Phenomenon") || s.Type.Contains("PlanesWalker") || s.Type.Contains("Vanguard")).OrderBy(r => Guid.NewGuid()).Take(1);
+                
+               var sorcery =  ctx.Cards.SqlQuery("Select * from magic.cards where type like '" + "%Creature%" + "' or type like '" + "%Enchantment%" + "' or type like '" + "%conspiracy%" + "' or type like '" + "%Phenomenon%" + "' or type like '" + "%Planeswalker%" + "' or type like '" + "%Vanguard%" + "' order by RAND() limit 1;").ToList();
 
 
                 return sorcery.First();
@@ -44,8 +46,7 @@ namespace MagicApp.Controllers
         {
             using (var ctx = new CardContext())
             {
-                var landlist = ctx.Cards.Where(l => l.Type.Contains("land") || l.Type.Contains("Plane -")).OrderBy(r => Guid.NewGuid()).Take(1);
-
+               var landlist = ctx.Cards.SqlQuery("Select * from magic.cards where type like '" + "%Land%" + "' or type like '" + "%Plane -%" + "' order by RAND() limit 1;").ToList();
 
                 return landlist.First();
 
@@ -57,7 +58,7 @@ namespace MagicApp.Controllers
         {
             using (var ctx = new CardContext())
             {
-                var creatureList = ctx.Cards.Where(l => l.Type.Contains("Creature") || l.Type.Contains("PlanesWalker")).OrderBy(r => Guid.NewGuid()).Take(1);
+                var creatureList = ctx.Cards.SqlQuery("Select * from magic.cards where type like '" + "%Creature%" + "' or type like '" + "%PlanesWalker%" + "' order by RAND() limit 1;").ToList();
 
 
                 return creatureList.First();
@@ -65,5 +66,6 @@ namespace MagicApp.Controllers
             }
         }
 
+        
     }
 }
