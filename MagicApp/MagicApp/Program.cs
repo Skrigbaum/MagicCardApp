@@ -116,10 +116,11 @@ namespace MagicApp
 
             }
 
-            //Fix for multiverse ID mismatch on mountains.
+            //Fix for multiverse ID mismatch on mountains & swamps.
             using (var ctx = new CardContext())
             {
                 ctx.Database.ExecuteSqlCommand($"update [MagicApp.Domain.CardContext].dbo.Cards set multiverseid = 423575 where name = 'Mountain';");
+                ctx.Database.ExecuteSqlCommand($"update [MagicApp.Domain.CardContext].dbo.Cards set multiverseid = 423570 where name = 'Swamp';");
                 ctx.SaveChanges();
             }
 

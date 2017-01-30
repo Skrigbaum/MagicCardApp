@@ -7,6 +7,8 @@ using System.Net;
 using System.Text.RegularExpressions;
 using System.Collections.Generic;
 using System.Linq;
+using System.Web.Helpers;
+using Newtonsoft.Json;
 
 namespace MagicFontEnd.Controllers
 {
@@ -40,12 +42,16 @@ namespace MagicFontEnd.Controllers
 
         public string Creature()
         {
-            var creature = MagicApp.Controllers.CardController.Problem();
-            var ImgUrl = "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=" + creature.MultiverseId + "&type=card";
-            var magicurl = "http://magiccards.info/scans/en/" + creature.Set + "/" + creature.mciNumber + ".jpg";
-            theProblem = creature.MultiverseId;
-            return ImgUrl;
-          }
+            
+           
+                var creature = MagicApp.Controllers.CardController.Problem();
+                theProblem = creature.MultiverseId;
+                var ImgUrl = "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=" + creature.MultiverseId + "&type=card";
+                var magicurl = "http://magiccards.info/scans/en/" + creature.Set + "/" + creature.mciNumber + ".jpg";
+                return ImgUrl;
+            
+      
+        }
 
            
 
@@ -124,16 +130,21 @@ namespace MagicFontEnd.Controllers
                 theSolution = solution.MultiverseId;
                 return ImgUrl;
             }
-
-           
-
-
         }
 
         public string Save()
         {
             string idConcat = string.Format("{0}|{1}|{2}|{3}|{4}", theProblem, theSetting, theSolution, theHelper, theAntagonist);
             return idConcat;
+        }
+
+        public string Load(string codes)
+        {
+            string[] CodeArray = new string[5];
+           CodeArray = codes.Split('|');
+            var jsonArray = JsonConvert.SerializeObject(CodeArray);
+            return jsonArray;
+            
         }
     }
 }

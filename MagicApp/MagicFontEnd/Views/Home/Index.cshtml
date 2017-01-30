@@ -74,6 +74,7 @@
         <p class="">
             <input type="button" onclick="Generate();" class="btn btn-primary btn-lg" value="Generate">
             <input type="button" onclick="SaveCards();" class="btn btn-primary btn-lg" value="Save">
+            <input type="button" onclick="LoadCards();" class="btn btn-primary btn-lg" value="Load">
         </p>
         <p class="">
           <input class="form-control" id="Load" value="Your code will be shown here." type="text" >
@@ -86,8 +87,9 @@
     <!-- Page Features -->
     <div class="row text-center">
         <div class="col-md-2 col-sm-6 hero-feature" >
+            <label style="color:white"><input type="checkbox" id="ProblemLock" /> Lock</label>
             <div class="thumbnail" style="background: transparent; border:transparent">
-                <img id="Creature" src="http://placehold.it/800x500" alt="" onclick="Creatures()" width="311px">
+                <img id="Problem" src="http://placehold.it/800x500" alt="" onclick="Problems()" width="311px">
                 <div class="caption">
                     <h3 style="color:#fff" >The Problem</h3>
                     <p style="color:#fff">
@@ -101,6 +103,7 @@
             </div>
         </div>
         <div class="col-md-2 col-sm-6 hero-feature">
+            <label style="color:white"><input type="checkbox" id="SettingLock" /> Lock</label>
             <div class="thumbnail" style="background: transparent; border:transparent">
                 <img id="Land" src="http://placehold.it/800x500" alt=""  onclick="Lands()" width="311px">
                 <div class="caption">
@@ -111,14 +114,15 @@
             </div>
         </div>
         <div class="col-md-2 col-sm-6 hero-feature">
+            <label style="color:white"><input type="checkbox" id="SolutionLock"/> Lock</label>
             <div class="thumbnail" style="background: transparent; border:transparent">
                 <img id="Solution" src="http://placehold.it/800x500" alt=""  onclick="Solutions();" width="311px">
                 <div class="caption">
-                    <h3 style="color:#fff">The Solution</h3>
+                    <h3 style="color:#fff">Key Feature</h3>
                     <p style="color:#fff">
-                        This can be considered "taking the rabbit out of the hat" or half a Deus Ex Machina.
-                        <br/>
-                        The group could solve the problem themselves, but it wouldn't be as fun, right?
+                        This can be something that appears during the game and is a key point of the adventure.
+                         Such as a needed treasure or "Dues ex Machina".
+                        
                     </p>
 
                 </div>
@@ -126,6 +130,7 @@
         </div>
 
         <div class="col-md-2 hero-feature">
+            <label style="color:white"><input type="checkbox" id="HelperLock"/> Lock</label>
             <div class="thumbnail" style="background: transparent; border:transparent">
                 <img id="Helper" src="http://placehold.it/800x500" alt="Helper Card" onclick="Helpers();" width="311px">
                 <div class="caption">
@@ -138,6 +143,7 @@
 
 
         <div class="col-md-2 col-sm-6 hero-feature">
+            <label style="color:white"><input type="checkbox" id="AntagonistLock"/> Lock</label>
             <div class="thumbnail" style="background: transparent; border:transparent">
                 <img id="Antagonist" src="http://placehold.it/800x500" alt=""  onclick="Antagonists();" width="311px">
                 <div class="caption">

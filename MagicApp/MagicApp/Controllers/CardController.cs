@@ -30,8 +30,8 @@ namespace MagicApp.Controllers
         {
             using (var ctx = new CardContext())
             {
-                
-               var sorcery =  ctx.Cards.SqlQuery("Select * from magic.cards where type like '" + "%Creature%" + "' or type like '" + "%Enchantment%" + "' or type like '" + "%conspiracy%" + "' or type like '" + "%Phenomenon%" + "' or type like '" + "%Planeswalker%" + "' or type like '" + "%Vanguard%" + "' order by RAND() limit 1;").ToList();
+
+                var sorcery = ctx.Cards.SqlQuery("Select * from magic.cards where type like '" + "%Creature%" + "' or type like '" + "%Enchantment%" + "' or type like '" + "%conspiracy%" + "' or type like '" + "%Phenomenon%" + "' or type like '" + "%Planeswalker%" + "' or type like '" + "%Vanguard%" + "' order by RAND() limit 1;").ToList();
 
 
                 return sorcery.First();
